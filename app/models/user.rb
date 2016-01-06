@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
 
   has_many :posts
-  has_many :votes, as: :voteable
+  has_many :votes
   has_many :answers, through: :posts
 
   def password
