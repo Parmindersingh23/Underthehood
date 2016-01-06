@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Signup</h3>
+  <% if @errors %>
+    <p>Something went wrong:</p>
+    <%=@errors%>
+  <% end %>
+  <form action="/users" method="post">
+
+      <p>
+      <input name="user[username]" placeholder="Username:">
+      </p>
+
+      <p>
+      <input type="password" name="user[password]" placeholder="password:">
+    </p>
+
+      <button type="submit" name="action">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 align="center">Welcome back!</h1>
+    <div class="login">
+      <h3>Login</h3>
+      <form method="post" action="/login" >
+
+          <p><input type="text" name="username" value="" placeholder="Username"></p>
+
+
+          <p><input type="password" name="password" value="" placeholder="Password"></p>
+
+        <p>
+          <button type="submit" name="action">Submit</button>
+        </p>
+
+
+      </form>
+        <%if @errors%>
+      <%=@errors%>
+    <%end%>
+</div>
