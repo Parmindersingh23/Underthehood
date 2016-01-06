@@ -38,7 +38,7 @@ article {
 article a.vote-button {
   color: #8C8C8C;
   text-decoration: none;
-  display: inline;
+  display: inline-block;
   vertical-align: sub;
   position: absolute;
 }
@@ -46,9 +46,11 @@ article a.vote-button {
 article a.vote-down {
   color: #8C8C8C;
   text-decoration: none;
-  display: inline;
-  vertical-align: sub;
+  display: inline-block;
   position: relative;
+  margin-top: 10px;
+  top: 10px;
+  right: 15.25px;
 }
 
 
@@ -67,12 +69,13 @@ article:before {
 article h2 a {
   text-decoration: none;
   color: black;
+  margin: 0px -10px;
 }
 
 article p {
   color: #8C8C8C;
   font-size: 7pt;
-  margin: 3px 30px;
+  margin: 3px 40px;
 }
 
 article p span.points:after {
@@ -80,6 +83,7 @@ article p span.points:after {
 }
 
 article p span.username:before {
+
   content: " by ";
 }
 
