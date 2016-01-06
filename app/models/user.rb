@@ -2,7 +2,9 @@
 class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
 
-  # has_many :posts
+  has_many :posts
+  has_many :votes, as: :voteable
+  has_many :answers, through: :posts
 
   def password
     @password || BCrypt::Password.new(hashed_password)
@@ -14,7 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def self.authenticate(user, password)
-    @user = User.find_by_email(user) || User.find_by_username(user)
+    @user = User.find_by_username(user)
     puts @user
     if @user && @user.password == password
       return @user

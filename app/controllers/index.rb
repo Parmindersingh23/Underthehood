@@ -18,9 +18,7 @@ delete '/posts/:id' do
 end
 
 post '/posts' do
-  Post.create( title: params[:title],
-               username: Faker::Internet.user_name,
-               comment_count: rand(1000) )
+  Post.create( title: params[:title] )
   redirect '/posts'
 end
 

@@ -10,7 +10,7 @@ post '/login' do
 
     redirect "/profile"
   else
-    @errors = "Your credentials don't match"
+    @errors = "Incorrect username/password."
     erb :"/sessions/login"
   end
 end
