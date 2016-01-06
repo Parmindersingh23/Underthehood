@@ -19,7 +19,9 @@ post '/new' do
 end
 
 delete '/posts/:id' do
-  # write logic for deleting posts here.
+  @post = Post.find(params[:id])
+  @post.destroy
+  redirect '/posts'
 end
 
 get '/posts/:id/vote' do
