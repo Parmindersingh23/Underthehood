@@ -13,6 +13,12 @@ get '/posts/:id/vote' do
   redirect "/posts"
 end
 
+get '/posts/:id/downvote' do
+  post = Post.find(params[:id])
+  post.votes.create(value: -1)
+  redirect "/posts"
+end
+
 delete '/posts/:id' do
   # write logic for deleting posts here.
 end
