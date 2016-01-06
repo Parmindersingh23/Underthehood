@@ -1,4 +1,4 @@
-afdafdfdsfbody {
+body {
   counter-reset:section;
   background-color: #F6F6EF;
   font-family: Verdana;
@@ -40,6 +40,15 @@ article a.vote-button {
   text-decoration: none;
   display: inline;
   vertical-align: sub;
+  position: absolute;
+}
+
+article a.vote-down {
+  color: #8C8C8C;
+  text-decoration: none;
+  display: inline;
+  vertical-align: sub;
+  position: relative;
 }
 
 
