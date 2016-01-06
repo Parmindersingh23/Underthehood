@@ -7,7 +7,6 @@ post '/login' do
   puts params
   if @login
     session[:user_id] = @login.id
-
     redirect "/profile"
   else
     @errors = "Incorrect username/password."

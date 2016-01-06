@@ -27,7 +27,12 @@
     <a href="#">Comments</a>
     <a href="#">Popular</a>
     <a href="/users/new">Register</a>
-    <a href="/login">Login</a>
+    <% if session[:user_id] %>
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login</a>
+    <% end %>
+
   </p>
 </header>
 
