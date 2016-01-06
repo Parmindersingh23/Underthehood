@@ -24,15 +24,13 @@
   <h1>Under The Hood</h1>
   <p>
     <a href="/posts">Home</a>
-    <a href="#">Comments</a>
-    <a href="#">Popular</a>
+    <a href="/profile">Profile</a>
     <a href="/users/new">Register</a>
     <% if session[:user_id] %>
       <a href="/logout">Logout</a>
     <% else %>
       <a href="/login">Login</a>
     <% end %>
-
   </p>
 </header>
 
