@@ -14,12 +14,15 @@ end
 
 #parminder/alicia created this
 post '/new' do
-  @post = Post.create(title: params[:title], content: params[:content])
+  @post = Post.create(title: params[:title], content: params[:content], user_id: session[:user_id])
   redirect '/posts'
 end
 
 delete '/posts/:id' do
-  # write logic for deleting posts here.
+  @post = Post.find(params[:id])
+  @post.destroy
+  redirect '/posts'
+
 end
 
 get '/posts/:id/vote' do
