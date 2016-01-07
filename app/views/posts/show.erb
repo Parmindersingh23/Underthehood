@@ -1,20 +1,28 @@
+<h1> Here is your question </h1>
+
 <div class='post-container'>
 
-    <article id="<%= post.id %>">
-      <a href='/posts/<%= post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
-      <h2><a href='/posts/<%= post.id %>'><%= post.title %></a></h2>
-      <p>
-        <span class='points'><%= post.points %></span>
-        <span class='username'><%= post.author %></span>
-        <span class='timestamp'><%= post.time_since_creation %></span>
 
+    <article id="<%= @post.id %>">
+
+      <a href='/posts/<%= @post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
+      <span class='points'><%= @post.points %></span>
+       <a href='/posts/<%= @post.id %>/downvote' class="fa fa-sort-asc vote-down"></a>
+      <h2><a href='/posts/<%= @post.id %>'><%= @post.title %></a></h2>
+      <p>
+        <span class='username'><%= @post.author %></span>
+        <span class='timestamp'><%= @post.comment_count %></span>
+        <span class='timestamp'><%= @post.time_since_creation %></span>
+        <% if session[:user_id] %>
+          <form action="/posts/<%= @post.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input class="btn" type="submit" value="delete">
+          </form>
+         <% end %>
       </p>
     </article>
 
 
 </div>
 
-<form id="posts" method="post" action="/posts">
-  <input type="text" name="title" placeholder="Title:">
-  <input type="submit" value="Submit New Post">
-</form>
+
