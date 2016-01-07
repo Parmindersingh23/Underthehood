@@ -13,7 +13,7 @@ get '/posts/:id' do
 end
 
 #parminder/alicia created this
-post '/new' do
+post '/posts' do
   @post = Post.create(title: params[:title], content: params[:content], user_id: session[:user_id])
   redirect '/posts'
 end

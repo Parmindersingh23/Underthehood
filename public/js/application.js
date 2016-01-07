@@ -4,4 +4,15 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+   function createAnswer(event) {
+    var postAnswer = $(this).serialize()
+    event.preventDefault();
+    var request = $.ajax({method: "post", url: '/posts/:id/answers', data: postAnswer})
+
+  }
+
+
+  $(".form-answer").click(createAnswer);
+
 });

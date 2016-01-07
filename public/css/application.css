@@ -1,13 +1,13 @@
 body {
   counter-reset:section;
-  background-color: #F6F6EF;
+  background-color: #ede6d3;
   font-family: Verdana;
   max-width: 700px;
   margin: 0 auto;
 }
 
 header {
-  background-color: #F4712D;
+  background-color: #69c6b8;
   padding: 5px 5px;
 }
 
@@ -129,6 +129,14 @@ form#posts input[type='submit'] {
   font-weight: bold;
   background-color: #F4712D;
 
+}
+
+.post-content {
+  margin-left: 60px;
+
+}
+
+.form-answer {
 
 }
 
