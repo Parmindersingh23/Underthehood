@@ -25,11 +25,11 @@
 </div>
 
 <div class='answers'>
-  <p><%=@answer.content%></p>
+"hi there"
 </div>
 
 <div class='form-answer'>
-  <form>
+  <form action="posts/<%= @post.id %>/answers" method="post">
     Enter answer here... <br/>
     <textarea rows="5" cols="50" name="description"></textarea><br>
     <input class="btn" type="submit" value="submit">
