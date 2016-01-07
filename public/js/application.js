@@ -19,7 +19,7 @@ $(document).ready(function() {
     $("#comment").on("submit", function(event) {
           event.preventDefault();
     var input_comment = $( "#testing" ).val();
-    $(".answers").append(input_comment + "<br> <br>");
+    $(".answers").append("- " + input_comment + "<br> <br>");
     });
 });
 
