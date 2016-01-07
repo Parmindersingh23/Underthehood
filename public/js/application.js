@@ -5,12 +5,16 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-  //  function createAnswer(event) {
-  //   var postAnswer = $(this).serialize()
-  //   event.preventDefault();
-  //   var request = $.ajax({method: "post", url: '/posts/:id/answers', data: postAnswer})
-
-  // }
+   $(".form-answer form").on("submit", function(event){
+      event.preventDefault();
+      var postAnswer = $(this).serialize();
+      var action = $(this).attr("action");
+      var request = $.ajax({method: "post", url: action, data: postAnswer});
+      request.done(function(responseData){
+        console.log(responseData);
+        $(".answers").append(responseData);
+      });
+    });
 
     $("#comment").on("submit", function(event) {
           event.preventDefault();
@@ -18,3 +22,4 @@ $(document).ready(function() {
     $(".answers").append(input_comment + "<br> <br>");
     });
 });
+
