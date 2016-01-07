@@ -1,13 +1,7 @@
 <div class="container" align = "center">
-  <h3><a href="/posts">Home</a></h3>
-<h1>Profile</h1>
+  <h1>Welcome Back, <%=@user.username%>!</h1>
+  <h4>Your Posts:</h4>
 <% if @updated %>
   <p>profile updated successfully!</p>
 <% end %>
-
-
-<p>Username: <%=@user.username%></p>
-
-
-
 </div>

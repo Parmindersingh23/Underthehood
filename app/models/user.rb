@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :answers, through: :posts
 
   def validate_password
-    if !password.blank?
+    if password.blank?
       errors.add(:password, "can't be blank")
     end
   end
