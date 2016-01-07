@@ -4,7 +4,7 @@ end
 
 post '/users' do
   puts params
-  @user = User.new(params[:user])
+  @user = User.new(params[:user], params[:password])
   if @user.save
     redirect '/login'
   else

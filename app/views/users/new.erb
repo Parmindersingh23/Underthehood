@@ -1,7 +1,7 @@
 <div class="container">
-  <h3>Signup</h3>
+  <h3>Register:</h3>
   <% if @errors %>
-    <p>Something went wrong:</p>
+    <p>Oops! Something went wrong! Please re-enter credentials.</p>
     <%=@errors%>
   <% end %>
   <form action="/users" method="post">
