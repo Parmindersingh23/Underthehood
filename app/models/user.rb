@@ -2,14 +2,15 @@
 class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :hashed_password, presence: true
-  # validates :password, presence: true
   validate :validate_password
   has_many :posts
   has_many :votes
   has_many :answers, through: :posts
 
   def validate_password
-
+    if !password.blank?
+      errors.add(:password, "can't be blank")
+    end
   end
 
   def password

@@ -12,7 +12,6 @@
         <span class='timestamp'><%= post.time_since_creation %></span>
         <% if session[:user_id] %>
           <form action="/posts/<%= post.id %>" method="post">
-            <br>
             <input type="hidden" name="_method" value="delete">
             <input class="btn" type="submit" value="delete">
           </form>
