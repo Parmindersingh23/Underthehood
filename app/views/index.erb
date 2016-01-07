@@ -7,7 +7,7 @@
        <a href='/posts/<%= post.id %>/downvote' class="fa fa-sort-asc vote-down"></a>
       <h2><a href='/posts/<%= post.id %>'><%= post.title %></a></h2>
       <p>
-        <span class='username'><%= post.user %></span>
+        <span class='username'><%= post.author %></span>
         <span class='timestamp'><%= post.comment_count %></span>
         <span class='timestamp'><%= post.time_since_creation %></span>
         <% if session[:user_id] %>

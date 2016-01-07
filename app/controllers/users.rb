@@ -3,6 +3,7 @@ get '/users/new' do
 end
 
 post '/users' do
+  puts params
   @user = User.new(params[:user])
   if @user.save
     redirect '/login'

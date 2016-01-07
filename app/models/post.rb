@@ -10,9 +10,8 @@ class Post < ActiveRecord::Base
 
   end
 
-  def user
-    # User.find(Post.last.user_id).username
-
+  def author
+    self.user.username
   end
 
   def time_since_creation
