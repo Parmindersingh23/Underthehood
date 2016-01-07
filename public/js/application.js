@@ -5,14 +5,16 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 
-   function createAnswer(event) {
-    var postAnswer = $(this).serialize()
-    event.preventDefault();
-    var request = $.ajax({method: "post", url: '/posts/:id/answers', data: postAnswer})
+  //  function createAnswer(event) {
+  //   var postAnswer = $(this).serialize()
+  //   event.preventDefault();
+  //   var request = $.ajax({method: "post", url: '/posts/:id/answers', data: postAnswer})
 
-  }
+  // }
 
-
-  $(".form-answer").click(createAnswer);
-
+    $("#comment").on("submit", function(event) {
+          event.preventDefault();
+    var input_comment = $( "#testing" ).val();
+    $(".answers").append(input_comment + "<br> <br>");
+    });
 });
