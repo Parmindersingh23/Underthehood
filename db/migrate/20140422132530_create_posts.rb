@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :views
       t.references :user
       t.references :answer
+
       t.timestamps
     end
   end
