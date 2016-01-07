@@ -1,10 +1,7 @@
 <h1> Here is your question </h1>
 
 <div class='post-container'>
-
-
-    <article id="<%= @post.id %>">
-
+  <article id="<%= @post.id %>">
       <a href='/posts/<%= @post.id %>/vote' class="fa fa-sort-desc vote-button"></a>
       <span class='points'><%= @post.points %></span>
        <a href='/posts/<%= @post.id %>/downvote' class="fa fa-sort-asc vote-down"></a>
@@ -21,8 +18,21 @@
          <% end %>
       </p>
     </article>
-
-
 </div>
 
+<div class='post-content'>
+  <p><%=@post.content%></p>
+</div>
+
+<div class='answers'>
+  <p><%=@answer.content%></p>
+</div>
+
+<div class='form-answer'>
+  <form>
+    Enter answer here... <br/>
+    <textarea rows="5" cols="50" name="description"></textarea><br>
+    <input class="btn" type="submit" value="submit">
+  </form>
+</div>
 
