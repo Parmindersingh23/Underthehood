@@ -9,7 +9,7 @@ end
 
 get '/posts/:id' do
   @post = Post.find(params[:id])
-  erb :post
+  erb :'posts/show'
 end
 
 #parminder/alicia created this
