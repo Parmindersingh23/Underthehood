@@ -1,18 +1,25 @@
 
 class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
-
+  validates :hashed_password, presence: true
+  # validates :password, presence: true
+  validate :validate_password
   has_many :posts
   has_many :votes
   has_many :answers, through: :posts
 
-  def password
-    @password || BCrypt::Password.new(hashed_password)
+  def validate_password
+
   end
 
-  def password=(new_password)
-    @password = BCrypt::Password.create(new_password)
-    self.hashed_password = @password
+  def password
+    @secure_password_obj || BCrypt::Password.new(self.hashed_password)
+  end
+
+  def password=(plaintext_password)
+    @plaintext_password = plaintext_password
+    @secure_password_obj = BCrypt::Password.create(plaintext_password)
+    self.hashed_password = @secure_password_obj.to_s
   end
 
   def self.authenticate(user, password)
