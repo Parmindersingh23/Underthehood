@@ -10,6 +10,11 @@ class Post < ActiveRecord::Base
 
   end
 
+  def user
+    # User.find(Post.last.user_id).username
+    # Post.username
+  end
+
   def time_since_creation
     ((Time.now - created_at) / 3600).round
   end

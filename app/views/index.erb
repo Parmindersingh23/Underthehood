@@ -10,7 +10,13 @@
         <span class='username'><%= post.user %></span>
         <span class='timestamp'><%= post.comment_count %></span>
         <span class='timestamp'><%= post.time_since_creation %></span>
-        <a class="delete" href='/posts/<%= post.id %>'></a>
+        <% if session[:user_id] %>
+          <form action="/posts/<%= post.id %>" method="post">
+            <br>
+            <input type="hidden" name="_method" value="delete">
+            <input class="btn" type="submit" value="delete">
+          </form>
+         <% end %>
       </p>
     </article>
 

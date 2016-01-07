@@ -7,7 +7,6 @@
         <span class='points'><%= post.points %></span>
         <span class='username'><%= post.user %></span>
         <span class='timestamp'><%= post.time_since_creation %></span>
-        <a class="delete" href='/posts/<%= post.id %>'></a>
       </p>
     </article>
 
@@ -16,5 +15,5 @@
 
 <form id="posts" method="post" action="/posts">
   <input type="text" name="title" placeholder="Title:">
-  <input type="submit" value="submit new post">
+  <input type="submit" value="Submit New Post">
 </form>
