@@ -4,7 +4,7 @@ end
 
 post '/login' do
   @login = User.authenticate(params[:username], params[:password])
-  puts params
+
   if @login
     session[:user_id] = @login.id
     redirect "/profile"
