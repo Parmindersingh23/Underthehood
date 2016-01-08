@@ -26,6 +26,10 @@
 
 <!-- parminder's work -->
 <div class='answers'>
+  <p>"THESE ARE ANSWERS"</p>
+ <% @post.answers.each do |answer| %>
+ <p> <%=answer.content%></p>
+ <%end%>
 </div>
 
 <div class='form-answer'>
@@ -36,19 +40,21 @@
   </form>
 </div>
 
+<div class="all-comments">
+ <p> "THESE ARE COMMENTS" </p>
+  <% @post.comments.each do |comment| %>
+ <p> <%=comment.content%></p>
+ <%end%>
+</div>
+
 
 <!-- Ryan's work -->
-<!-- <script src="jquery-1.10.js"></script>
-<script src="application.js"></script> -->
-<div>
-  <p>
-    <form id="comment" method="post">
-      <input id="testing" type="text" name="content">
-      <br>
-      <input type="submit" value="Post new comment!">
-      <br>
-    </form>
-  </p>
+
+<div class='comment-answer'>
+  <form action="/posts/<%= @post.id %>/comments" method="post">
+    <textarea rows="1" cols="20" name="description"></textarea><br>
+    <input class="btn" type="submit" value="enter comment!">
+  </form>
 </div>
 
 

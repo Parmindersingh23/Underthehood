@@ -11,15 +11,32 @@ $(document).ready(function() {
       var action = $(this).attr("action");
       var request = $.ajax({method: "post", url: action, data: postAnswer});
       request.done(function(responseData){
-        console.log(responseData);
         $(".answers").append(responseData);
       });
     });
 
-    $("#comment").on("submit", function(event) {
+
+
+
+
+    $(".comment-answer form").on("submit", function(event) {
           event.preventDefault();
-    var input_comment = $( "#testing" ).val();
-    $(".answers").append("- " + input_comment + "<br> <br>");
+      var inputComment = $(this).serialize();
+      var commentId = $(this).attr("action");
+      var request = $.ajax({method: "post", url: commentId, data: inputComment});
+      request.done(function(responseData){
+        $(".all-comments").append(responseData);
+        console.log(responseData)
+      });
     });
+
+
+
+
+
+
+
+
+
 });
 
