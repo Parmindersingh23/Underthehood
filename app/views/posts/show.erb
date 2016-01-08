@@ -24,13 +24,12 @@
   <p><%=@post.content%></p>
 </div>
 
-<!-- parminder's work -->
-<div class='answers'>
+ <div class='answers'>
   <p>"THESE ARE ANSWERS"</p>
     <% @post.answers.each do |answer| %>
-      <a href='/posts/<%= @post.id %>/answers/<%=@post.%>/vote' class="fa fa-sort-desc vote-button"></a>
-      <span class='points'><%= @answer.points %></span>
-      <a href='/posts/<%= @post.id %>/answers/<%=@post.answer_id%>/downvote' class="fa fa-sort-asc vote-down"></a>
+       <a href='/posts/<%=@post.id %>/answers/<%=answer.id%>/vote' class="fa fa-sort-desc vote-button"></a>
+      <span class='#{answers.id}'><%=@post.points %></span>
+       <a href='/posts/<%=@post.id %>/answers/<%=answer.id%>/downvote' class="fa fa-sort-asc vote-down"></a>
   <p> <%=answer.content%></p>
  <%end%>
 </div>
@@ -49,9 +48,6 @@
  <p> <%=comment.content%></p>
  <%end%>
 </div>
-
-
-<!-- Ryan's work -->
 
 <div class='comment-answer'>
   <form action="/posts/<%= @post.id %>/comments" method="post">

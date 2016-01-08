@@ -7,8 +7,8 @@ get '/posts/new' do
   erb :'/posts/new'
 end
 
-get '/posts/:id' do
-  @post = Post.find(params[:id])
+get '/posts/:post_id' do
+  @post = Post.find(params[:post_id])
   erb :'posts/show'
 end
 
@@ -18,21 +18,21 @@ post '/posts/new' do
   redirect '/posts'
 end
 
-delete '/posts/:id' do
-  @post = Post.find(params[:id])
+delete '/posts/:post_id' do
+  @post = Post.find(params[:post_id])
   @post.destroy
   redirect '/posts'
 
 end
 
-get '/posts/:id/vote' do
-  post = Post.find(params[:id])
+get '/posts/:post_id/vote' do
+  post = Post.find(params[:post_id])
   post.votes.create(value: 1)
   redirect "/posts"
 end
 
-get '/posts/:id/downvote' do
-  post = Post.find(params[:id])
+get '/posts/:post_id/downvote' do
+  post = Post.find(params[:post_id])
   post.votes.create(value: -1)
   redirect "/posts"
 end
