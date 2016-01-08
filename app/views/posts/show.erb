@@ -27,8 +27,11 @@
 <!-- parminder's work -->
 <div class='answers'>
   <p>"THESE ARE ANSWERS"</p>
- <% @post.answers.each do |answer| %>
- <p> <%=answer.content%></p>
+    <% @post.answers.each do |answer| %>
+      <a href='/posts/<%= @post.id %>/answers/<%=@post.%>/vote' class="fa fa-sort-desc vote-button"></a>
+      <span class='points'><%= @answer.points %></span>
+      <a href='/posts/<%= @post.id %>/answers/<%=@post.answer_id%>/downvote' class="fa fa-sort-asc vote-down"></a>
+  <p> <%=answer.content%></p>
  <%end%>
 </div>
 

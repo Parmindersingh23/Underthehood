@@ -8,10 +8,10 @@ post '/posts/:id/comments' do
 end
 
 # post '/answers/:id/comments' do
-  # p params
-  # if request.xhr?
-  #   answer = Answer.find(params[:id])
-  #   answer.comments.new(params[:comment])
-  # end
+#   p params
+#   if request.xhr?
+#     answer = Answer.find(params[:id])
+#     @answer_comment = answer.comments.build(content: params[:description])
+#   end
 # end
 
