@@ -30,10 +30,32 @@ $(document).ready(function() {
       });
     });
 
+    $(".answers a:first").on("submit", function(event){
+      event.preventDefault();
+      var inputVote = $(this).serialize();
+      var voteId = $(this).attr("href");
+      var request = $.ajax({method: "post", url: voteId, data: inputVote});
+      request.done(function(responseData){
 
 
+    });
+      console.log(responseData);
+
+    })
 
 
+     $(".answers a:last").on("submit", function(event){
+      event.preventDefault();
+      var inputVote = $(this).serialize();
+      var voteId = $(this).attr("href");
+      var request = $.ajax({method: "post", url: voteId, data: inputVote});
+      request.done(function(responseData){
+
+
+    });
+      console.log(responseData);
+
+    })
 
 
 
